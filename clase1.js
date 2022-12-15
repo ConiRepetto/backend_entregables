@@ -45,7 +45,7 @@ class Contador {
 
 let Coni = new Contador("Coni")
 let Dami = new Contador ("Dami")
-
+console.log(Coni)
 // class Auto {
 //     constructor(marca, modelo, anio, precio, stock) {
 //         this.marca = marca;
