@@ -46,34 +46,34 @@ class Contador {
 let Coni = new Contador("Coni")
 let Dami = new Contador ("Dami")
 
-class Auto {
-    constructor(marca, modelo, anio, precio, stock) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.anio = anio;
-        this.precio = precio;
-        this.stock = stock;
-    }
-    descontarStock() {
-        this.stock = false
-        console.table(this.Auto)
-    };
-}
+// class Auto {
+//     constructor(marca, modelo, anio, precio, stock) {
+//         this.marca = marca;
+//         this.modelo = modelo;
+//         this.anio = anio;
+//         this.precio = precio;
+//         this.stock = stock;
+//     }
+//     descontarStock() {
+//         this.stock = false
+//         console.table(this.Auto)
+//     };
+// }
 
-let auto1 = new Auto('Chevrolet', 'Meriva', 2008, 5000, true)
-let auto2 = new Auto('Toyota', 'Etios', 2017, 10000, false)
-let auto3 = new Auto('Toyota', 'Yaris', 2020, 20000, true)
-let auto4 = new Auto('Peugeot', '208', 2015, 15000, false)
+// let auto1 = new Auto('Chevrolet', 'Meriva', 2008, 5000, true)
+// let auto2 = new Auto('Toyota', 'Etios', 2017, 10000, false)
+// let auto3 = new Auto('Toyota', 'Yaris', 2020, 20000, true)
+// let auto4 = new Auto('Peugeot', '208', 2015, 15000, false)
 
 
-const concesionaria = []
+// const concesionaria = []
 
-function agregarAuto(auto){
-    concesionaria.push(auto)
-    console.table(concesionaria)
-}
+// function agregarAuto(auto){
+//     concesionaria.push(auto)
+//     console.table(concesionaria)
+// }
 
-agregarAuto(auto1)
-agregarAuto(auto2)
-agregarAuto(auto3)
-agregarAuto(auto4)
+// agregarAuto(auto1)
+// agregarAuto(auto2)
+// agregarAuto(auto3)
+// agregarAuto(auto4)
