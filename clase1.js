@@ -13,7 +13,7 @@ let person = people.find(p => {
 
 console.log(person)
 
-//////////////////
+/////////////////
 
 let i = 0
 
