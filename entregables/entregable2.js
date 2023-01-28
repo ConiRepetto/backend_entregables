@@ -26,21 +26,20 @@
 
 // Archivo de javascript con el nombre ProductManager.js
 
-
-
-
-
+import fs from 'fs'
+//const fs = require('fs')
 
 
 class ProductManager {
     constructor(title, description, price, thumbnail, code, stock) {
-        this.id = ProductManager.randomId(5)
+        this.id = ProductManager.randomId(5) //cantidad de caracteres en el ID
         this.title = title;
         this.description = description;
         this.price = price;
         this.thumbnail = thumbnail;
         this.code = code;
-        this.stock = stock
+        this.stock = stock;
+        this.path = ProductManager.productPath(this.id);
     }
 
     static products = []
@@ -53,6 +52,19 @@ class ProductManager {
         }
         return result;
     }
+
+    //La clase debe contar con una variable this.path, el cual se inicializará desde el constructor y debe recibir la ruta a trabajar desde el momento de generar su instancia.
+    static productPath = (id) => {
+        fs.writeFileSync(`./${id}.txt`, `Product ID: ${id}`)
+
+        if (fs.existsSync(`./${id}.txt`)) { //verificar que exista
+            // let contenido = fs.readFileSync(`./${id}.txt`, "utf-8")
+            // console.log(contenido)
+
+        }
+        return (`./${id}.txt`)
+    }
+
 
     getProducts = () => {
         console.log(ProductManager.products)
@@ -72,6 +84,7 @@ class ProductManager {
                 thumbnail: `${this.thumbnail}`,
                 code: `${this.code}`,
                 stock: `${this.stock}`,
+                path: `${this.path}`
             }), console.log(`Se agrego tu producto " ${this.title} " ! `)
         }
     }
@@ -88,6 +101,22 @@ class ProductManager {
         }
     }
 
+    updateProduct = (idModificar) => {
+        fs.writeFileSync(`./${idModificar}.txt`,
+        ` Product ID: ${this.id}
+        title: ${this.title}, 
+        description: ${this.description}, 
+        price: ${this.price},
+        thumbnail: ${this.thumbnail},
+        code: ${this.code}, 
+        stock: 6666666 `)
+        console.log(`Se modifico el producto " ${idModificar} " ! `)
+    }
+
+    deleteProduct = (idEliminar) => {
+        fs.unlinkSync(`./${idEliminar}.txt`)
+        console.log(`Se elimino el producto " ${idEliminar} " ! `)
+    }
 }
 
 
@@ -110,3 +139,5 @@ productoNuevo3.addProduct();
 console.log(ProductManager.products);
 
 productoNuevo3.getProductById("abc457");
+//productoNuevo3.deleteProduct("GaAgv");
+productoNuevo3.updateProduct("ZgfGQ");

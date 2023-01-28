@@ -1,48 +1,50 @@
-// let objetoNums = {
+///////////////////////////////////
 
-// }
+import fs from 'fs'
 
 
-// function random() {
-//     for (let i = 0; i < 10000; i++) {
-//         const num = Math.floor(Math.random() * 20) + 1
+// Crear un archivo
+fs.writeFileSync('./primerTexto.txt', 'Hola Comision 31010!!!')
+//ruta del archivo // contenido del archivo
 
-//         if (condition) {
-            
-//         } else {
-            
-//         }
+if (fs.existsSync("./primerTexto.txt")) { //verificar que exista
+    let contenido = fs.readFileSync("./primerTexto.txt", "utf-8")
+    console.log(contenido)
 
-//         objetoNums[num] = objetoNums[num] ? objetoNums[num] + 1 : 1 //if en el objeto Nums existe en num aleatorio entonces ? incrementa en uno el vlor?
+    // Vamos a modificar un archivo con append
+    fs.appendFileSync('./primerTexto.txt', 'texto agregado')
+    contenido = fs.readFileSync("./primerTexto.txt", "utf-8")
+    console.log(contenido)
 
-//     }
-//     console.log(objetoNums)
-// }
-
-// random()
-
-//importar dependencia de node "npm i random"
-
-import random from "random"
-
-//creamos funcion 
-function GenRandomNum(){
-    let randomNumList = []
-    for(let i = 0; i < 10000; i++) {
-        let randomNumber = random.int(1, 20);
-        randomNumList.push(randomNumber)
-    }
-    return randomNumList;
+    fs.unlinkSync("./primerTexto.txt")
 }
 
-let counts = {}
 
-let randomNumList = GenRandomNum()
-randomNumList.forEach(function (number) {
-    if(!counts[number]){
-        counts[number] = 1; 
-    } else{
-        counts[number]++
-    }
-})
-console.log(counts)
+
+
+
+// // Escribir un archivo sin contenido
+// fs.open('./segundoTexto.txt', 'w', function(err, file){
+//     if (err) throw err;
+//     console.log("Guardado!")
+// })
+
+// // Crear un archivo usando write
+// fs.writeFileSync('tercerTexto.txt', 'Hola contenido =)', function(err){
+//     if (err) throw err;
+//     console.log("Guardado!!!");
+// })
+
+
+
+// // Otra forma de modificar un archivo es con write
+// fs.writeFileSync('./segundoTexto.txt', 'Esta es la primer linea!', function(err){
+//     if (err) throw err;
+//     console.log("El archivo ha sido modificado con exito!");
+// });
+
+// // Esta es la forma de borrar un archivo
+// fs.unlink('./tercerTexto.txt', function(err){
+//     if (err) throw err;
+//     console.log("Su archivo ha sido eliminado con exito!!!")
+// });

@@ -1,5 +1,31 @@
 import moment  from "moment/moment.js";
 
+
+
+import random from "random"
+
+//creamos funcion 
+function GenRandomNum(){
+    let randomNumList = []
+    for(let i = 0; i < 10000; i++) {
+        let randomNumber = random.int(1, 20);
+        randomNumList.push(randomNumber)
+    }
+    return randomNumList;
+}
+
+let counts = {}
+
+let randomNumList = GenRandomNum()
+randomNumList.forEach(function (number) {
+    if(!counts[number]){
+        counts[number] = 1; 
+    } else{
+        counts[number]++
+    }
+})
+console.log(counts)
+
 //Fecha Actual
 let currentDate = moment();
 
