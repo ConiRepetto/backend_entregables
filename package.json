@@ -5,13 +5,14 @@
   "license": "MIT",
   "name": "backend-coni",
   "scripts": {
+    "start": "nodemon clase7.js",
     "watch:css": "nodemon -e scss -x \"npm run build:css\"",
     "build:css": "node-sass --output-style compressed assets/scss/estilos.scss assets/css/stylepack.css"
   },
   "version": "1.0.0",
   "devDependencies": {
     "node-sass": "^7.0.1",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.20"
   },
   "main": "clase0.js",
   "dependencies": {
@@ -69,6 +70,7 @@
     "error-ex": "^1.3.2",
     "escalade": "^3.1.1",
     "escape-string-regexp": "^1.0.5",
+    "express": "^4.18.2",
     "extend": "^3.0.2",
     "extsprintf": "^1.3.0",
     "fast-deep-equal": "^3.1.3",
